@@ -36,6 +36,12 @@ function ServoToggle () {
     }
     servoChange()
 }
+function servoIncrease () {
+    let servoangle = 0
+    if (servoangle == 180) {
+    	
+    }
+}
 function Sonar () {
     SR04 = cuteBot.ultrasonic(cuteBot.SonarUnit.Centimeters)
     basic.showNumber(SR04)
@@ -56,7 +62,7 @@ function Nurse_to_Cardiac () {
     turn_right(1.5)
 }
 input.onButtonPressed(Button.A, function () {
-	
+    ServoToggle()
 })
 function performPath (path: number) {
     if (path == 3) {
@@ -71,11 +77,29 @@ function performPath (path: number) {
 function servoChange () {
     if (servostate == 0) {
         cuteBot.setServo(cuteBot.ServoList.S1, 0)
-        cuteBot.setServo(cuteBot.ServoList.S2, 10)
+        cuteBot.setServo(cuteBot.ServoList.S2, 0)
         basic.showNumber(0)
     } else if (servostate == 1) {
+        cuteBot.setServo(cuteBot.ServoList.S1, 10)
+        cuteBot.setServo(cuteBot.ServoList.S1, 10)
+        basic.pause(200)
         cuteBot.setServo(cuteBot.ServoList.S1, 20)
-        cuteBot.setServo(cuteBot.ServoList.S2, 0)
+        cuteBot.setServo(cuteBot.ServoList.S1, 20)
+        basic.pause(200)
+        cuteBot.setServo(cuteBot.ServoList.S1, 30)
+        cuteBot.setServo(cuteBot.ServoList.S1, 30)
+        basic.pause(200)
+        cuteBot.setServo(cuteBot.ServoList.S1, 40)
+        cuteBot.setServo(cuteBot.ServoList.S1, 40)
+        basic.pause(200)
+        cuteBot.setServo(cuteBot.ServoList.S1, 50)
+        cuteBot.setServo(cuteBot.ServoList.S1, 50)
+        basic.pause(200)
+        cuteBot.setServo(cuteBot.ServoList.S1, 60)
+        cuteBot.setServo(cuteBot.ServoList.S1, 60)
+        basic.pause(200)
+        cuteBot.setServo(cuteBot.ServoList.S1, 70)
+        cuteBot.setServo(cuteBot.ServoList.S1, 70)
         basic.showNumber(1)
     }
 }
@@ -155,6 +179,7 @@ let distance = 0
 let multiplier = 0
 let mmultiplier = 0
 servostate = 0
+servoChange()
 // specialEd(1)
 // basic.pause(1000)
 // _90left(1)
