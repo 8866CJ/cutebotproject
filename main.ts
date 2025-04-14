@@ -46,43 +46,11 @@ function performPath (path: number) {
 }
 function servoChange () {
     if (servostate == 0) {
-        cuteBot.setServo(cuteBot.ServoList.S1, 0)
-        cuteBot.setServo(cuteBot.ServoList.S2, 0)
-        basic.showNumber(0)
-    } else if (servostate == 1) {
-        cuteBot.setServo(cuteBot.ServoList.S1, 10)
-        cuteBot.setServo(cuteBot.ServoList.S1, 10)
-        basic.pause(200)
-        cuteBot.setServo(cuteBot.ServoList.S1, 20)
-        cuteBot.setServo(cuteBot.ServoList.S1, 20)
-        basic.pause(200)
-        cuteBot.setServo(cuteBot.ServoList.S1, 30)
-        cuteBot.setServo(cuteBot.ServoList.S1, 30)
-        basic.pause(200)
-        cuteBot.setServo(cuteBot.ServoList.S1, 40)
-        cuteBot.setServo(cuteBot.ServoList.S1, 40)
-        basic.pause(200)
-        cuteBot.setServo(cuteBot.ServoList.S1, 50)
-        cuteBot.setServo(cuteBot.ServoList.S1, 50)
-        basic.pause(200)
-        cuteBot.setServo(cuteBot.ServoList.S1, 60)
-        cuteBot.setServo(cuteBot.ServoList.S1, 60)
-        basic.pause(200)
-        cuteBot.setServo(cuteBot.ServoList.S1, 70)
-        cuteBot.setServo(cuteBot.ServoList.S1, 70)
-        basic.showNumber(1)
+        servoStartUp()
+    } else if (servostate = 1) {
+        pickUpVial()
     }
 }
-function WeeWoo () {
-    cuteBot.colorLight(cuteBot.RGBLights.RGB_R, 0x0000ff)
-    cuteBot.colorLight(cuteBot.RGBLights.RGB_L, 0xff0000)
-    basic.pause(100)
-    cuteBot.colorLight(cuteBot.RGBLights.RGB_L, 0x0000ff)
-    cuteBot.colorLight(cuteBot.RGBLights.RGB_R, 0xff0000)
-}
-input.onButtonPressed(Button.AB, function () {
-	
-})
 function Cardi_ER () {
     forwards(0.4)
     _90left(0.8)
@@ -117,11 +85,10 @@ function _90left (mmultiplier: number) {
     cuteBot.moveTime(cuteBot.Direction.left, 50, 0.158 * mmultiplier)
 }
 let servostate = 0
-let distance = 0
-let multiplier = 0
 let mmultiplier = 0
+let multiplier = 0
+let distance = 0
 servostate = 0
-servoChange()
 basic.forever(function () {
 	
 })
