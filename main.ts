@@ -5,13 +5,19 @@ function wiggle () {
 }
 function pickUpVial () {
     cuteBot.setServo(cuteBot.ServoList.S1, 120)
-    basic.pause(2000)
+    basic.pause(1000)
     cuteBot.setServo(cuteBot.ServoList.S1, 100)
-    basic.pause(500)
+    basic.pause(200)
+    cuteBot.setServo(cuteBot.ServoList.S1, 90)
+    basic.pause(200)
+    cuteBot.setServo(cuteBot.ServoList.S1, 80)
+    basic.pause(200)
+    cuteBot.setServo(cuteBot.ServoList.S1, 70)
+    basic.pause(200)
     cuteBot.setServo(cuteBot.ServoList.S1, 60)
-    basic.pause(500)
-    cuteBot.setServo(cuteBot.ServoList.S1, 34)
-    cuteBot.setServo(cuteBot.ServoList.S2, 4)
+    basic.pause(200)
+    cuteBot.setServo(cuteBot.ServoList.S1, 30)
+    wiggle()
 }
 function ServoToggle () {
     if (servostate == 0) {
