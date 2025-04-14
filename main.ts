@@ -32,7 +32,7 @@ function Nurse_to_Cardiac () {
     turn_right(1.5)
 }
 input.onButtonPressed(Button.A, function () {
-	
+    ServoToggle()
 })
 function performPath (path: number) {
     if (path == 3) {
@@ -45,9 +45,10 @@ function performPath (path: number) {
     }
 }
 function servoChange () {
+    basic.showNumber(servostate)
     if (servostate == 0) {
         servoStartUp()
-    } else if (servostate = 1) {
+    } else if (servostate == 1) {
         pickUpVial()
     }
 }
@@ -84,11 +85,10 @@ function _90left (mmultiplier: number) {
     basic.pause(100)
     cuteBot.moveTime(cuteBot.Direction.left, 50, 0.158 * mmultiplier)
 }
-let servostate = 0
-let mmultiplier = 0
-let multiplier = 0
 let distance = 0
-servostate = 0
+let multiplier = 0
+let mmultiplier = 0
+let servostate = 0
 basic.forever(function () {
 	
 })
