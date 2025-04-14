@@ -1,17 +1,30 @@
 function wiggle () {
-    cuteBot.setServo(cuteBot.ServoList.S2, 0)
-    basic.pause(500)
-    cuteBot.setServo(cuteBot.ServoList.S2, 45)
+    for (let index = 0; index < 4; index++) {
+        cuteBot.setServo(cuteBot.ServoList.S2, 0)
+        basic.pause(500)
+        cuteBot.setServo(cuteBot.ServoList.S2, 45)
+    }
 }
 function pickUpVial () {
     cuteBot.setServo(cuteBot.ServoList.S1, 120)
     basic.pause(2000)
     cuteBot.setServo(cuteBot.ServoList.S1, 100)
-    basic.pause(500)
+    basic.pause(200)
+    cuteBot.setServo(cuteBot.ServoList.S1, 90)
+    basic.pause(200)
+    cuteBot.setServo(cuteBot.ServoList.S1, 80)
+    basic.pause(200)
+    cuteBot.setServo(cuteBot.ServoList.S1, 70)
+    basic.pause(200)
     cuteBot.setServo(cuteBot.ServoList.S1, 60)
-    basic.pause(500)
-    cuteBot.setServo(cuteBot.ServoList.S1, 34)
-    cuteBot.setServo(cuteBot.ServoList.S2, 4)
+    basic.pause(200)
+    cuteBot.setServo(cuteBot.ServoList.S1, 50)
+    basic.pause(200)
+    cuteBot.setServo(cuteBot.ServoList.S1, 40)
+    basic.pause(200)
+    cuteBot.setServo(cuteBot.ServoList.S1, 30)
+    basic.pause(200)
+    wiggle()
 }
 function ServoToggle () {
     if (servostate == 0) {
@@ -48,7 +61,7 @@ function servoChange () {
     basic.showNumber(servostate)
     if (servostate == 0) {
         servoStartUp()
-    } else if (servostate == 1) {
+    } else if (true) {
         pickUpVial()
     }
 }
@@ -85,10 +98,9 @@ function _90left (mmultiplier: number) {
     basic.pause(100)
     cuteBot.moveTime(cuteBot.Direction.left, 50, 0.158 * mmultiplier)
 }
+let servostate = 0
 let distance = 0
 let multiplier = 0
 let mmultiplier = 0
-let servostate = 0
-basic.forever(function () {
-	
-})
+servostate = 0
+servoChange()
