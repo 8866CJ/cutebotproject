@@ -1,33 +1,18 @@
-// def AvoidanceProtocol():
-// global SR04
-// while True:
-// SR04 = cuteBot.ultrasonic(cuteBot.SonarUnit.CENTIMETERS)
-// if SR04 <= 15:
-// turn_right(0.5)
-// SR04 = cuteBot.ultrasonic(cuteBot.SonarUnit.CENTIMETERS)
-// if SR04 <= 15:
-// cuteBot.move_time(cuteBot.Direction.RIGHT, 15, 2)
-// basic.pause(100)
-// SR04 = cuteBot.ultrasonic(cuteBot.SonarUnit.CENTIMETERS)
-// if SR04 <= 15:
-// cuteBot.move_time(cuteBot.Direction.RIGHT, 15, 2)
-// basic.pause(100)
-// SR04 = cuteBot.ultrasonic(cuteBot.SonarUnit.CENTIMETERS)
-// if SR04 <= 15:
-// cuteBot.motors(-15, 15)
-// music.play_tone(262, music.beat(BeatFraction.WHOLE))
-// else:
-// cuteBot.motors(15, 15)
-// else:
-// cuteBot.motors(15, 15)
-// else:
-// cuteBot.motors(151, 15)
-// else:
-// cuteBot.motors(15, 15)
-// def attemptAuto():
-// global SR04
-// while True:
-// SR04 = cutebot.ultras
+function wiggle () {
+    cuteBot.setServo(cuteBot.ServoList.S2, 0)
+    basic.pause(500)
+    cuteBot.setServo(cuteBot.ServoList.S2, 45)
+}
+function pickUpVial () {
+    cuteBot.setServo(cuteBot.ServoList.S1, 120)
+    basic.pause(2000)
+    cuteBot.setServo(cuteBot.ServoList.S1, 100)
+    basic.pause(500)
+    cuteBot.setServo(cuteBot.ServoList.S1, 60)
+    basic.pause(500)
+    cuteBot.setServo(cuteBot.ServoList.S1, 34)
+    cuteBot.setServo(cuteBot.ServoList.S2, 4)
+}
 function ServoToggle () {
     if (servostate == 0) {
         servostate = 1
@@ -175,25 +160,11 @@ function _90left (mmultiplier: number) {
 }
 let SR04 = 0
 let servostate = 0
-let distance = 0
-let multiplier = 0
 let mmultiplier = 0
+let multiplier = 0
+let distance = 0
 servostate = 0
 servoChange()
-// specialEd(1)
-// basic.pause(1000)
-// _90left(1)
-// basic.pause(200)
-// turn_right(3)
-// basic.pause(200)
-// specialEd(1)
-// basic.pause(1000)
-// _90left(1)
-// basic.pause(200)
-// specialEd(1)
-// def on_every_interval():
-// SonarVisual()
-// loops.every_interval(500, on_every_interval)
 basic.forever(function () {
 	
 })
