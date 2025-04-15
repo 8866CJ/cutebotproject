@@ -1,7 +1,7 @@
 function wiggle () {
     for (let index = 0; index < 4; index++) {
         cuteBot.setServo(cuteBot.ServoList.S2, 0)
-        basic.pause(500)
+        basic.pause(200)
         cuteBot.setServo(cuteBot.ServoList.S2, 45)
     }
 }
@@ -34,6 +34,30 @@ function ServoToggle () {
     }
     servoChange()
 }
+function lingonhoolio () {
+    if (skibidi == 1) {
+        cuteBot.colorLight(cuteBot.RGBLights.ALL, 0xff0000)
+        basic.pause(3000)
+    } else if (skibidi == 2) {
+        cuteBot.colorLight(cuteBot.RGBLights.ALL, 0xff8000)
+        basic.pause(3000)
+    } else if (skibidi == 3) {
+        cuteBot.colorLight(cuteBot.RGBLights.ALL, 0xffff00)
+        basic.pause(3000)
+    } else if (skibidi == 4) {
+        cuteBot.colorLight(cuteBot.RGBLights.ALL, 0x00ff00)
+        basic.pause(3000)
+    } else if (skibidi == 5) {
+        cuteBot.colorLight(cuteBot.RGBLights.ALL, 0x007fff)
+        basic.pause(3000)
+    } else if (skibidi == 6) {
+        cuteBot.colorLight(cuteBot.RGBLights.ALL, 0xff00ff)
+        basic.pause(3000)
+    } else {
+        basic.clearScreen()
+        basic.showIcon(IconNames.Skull)
+    }
+}
 function servoStartUp () {
     cuteBot.setServo(cuteBot.ServoList.S1, 0)
     cuteBot.setServo(cuteBot.ServoList.S2, 45)
@@ -65,6 +89,24 @@ function servoChange () {
         pickUpVial()
     }
 }
+function pathTwo () {
+    Nurse_to_Cardiac()
+    basic.pause(300)
+    cardi_room1()
+}
+function wassup () {
+    if (skibidi < 6) {
+        skibidi += 1
+    } else {
+        skibidi = 1
+    }
+    lingonhoolio()
+}
+function pathOne () {
+    Nurse_to_Cardiac()
+    basic.pause(300)
+    Cardi_ER()
+}
 function Cardi_ER () {
     forwards(0.4)
     _90left(0.8)
@@ -81,6 +123,9 @@ function forwards (times: number) {
     cuteBot.stopcar()
     basic.pause(100)
 }
+input.onLogoEvent(TouchButtonEvent.Pressed, function () {
+    wassup()
+})
 function cardi_room1 () {
     forwards(1.3)
     turn_right(0.85)
@@ -98,9 +143,11 @@ function _90left (mmultiplier: number) {
     basic.pause(100)
     cuteBot.moveTime(cuteBot.Direction.left, 60.5, 0.128 * mmultiplier)
 }
+let skibidi = 0
 let servostate = 0
-let distance = 0
-let multiplier = 0
 let mmultiplier = 0
+let multiplier = 0
+let distance = 0
 servostate = 0
+skibidi = 0
 servoChange()
