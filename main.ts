@@ -76,8 +76,8 @@ input.onButtonPressed(Button.B, function () {
 })
 function forwards (times: number) {
     cuteBot.stopcar()
-    cuteBot.motors(50, 50.05)
-    basic.pause(777 * times)
+    cuteBot.motors(51, 51.95)
+    basic.pause(888 * times)
     cuteBot.stopcar()
     basic.pause(100)
 }
@@ -89,14 +89,14 @@ function cardi_room1 () {
 function turn_right (multiplier: number) {
     cuteBot.stopcar()
     basic.pause(100)
-    cuteBot.moveTime(cuteBot.Direction.right, 50, 0.158 * multiplier)
+    cuteBot.moveTime(cuteBot.Direction.right, 56, 0.14 * multiplier)
     cuteBot.stopcar()
     basic.pause(100)
 }
 function _90left (mmultiplier: number) {
     cuteBot.stopcar()
     basic.pause(100)
-    cuteBot.moveTime(cuteBot.Direction.left, 50, 0.158 * mmultiplier)
+    cuteBot.moveTime(cuteBot.Direction.left, 60.5, 0.128 * mmultiplier)
 }
 let servostate = 0
 let distance = 0
