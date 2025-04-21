@@ -13,12 +13,13 @@ input.onButtonPressed(Button.A, function () {
 })
 
 input.onButtonPressed(Button.B, function () {
+    forwards(1)
     _90left(1)
-})
-
-input.onButtonPressed(Button.AB, function () {
+    turn_right(1)
+    turn_right(2)
     forwards(1)
 })
+
 
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
     wassup()
@@ -271,4 +272,43 @@ function servoChange() {
     else {
         pickUp()
     }
+}
+
+function lingonhoolio() {
+    basic.pause(3000)
+    if (skibidi == 1) {
+        cuteBot.colorLight(cuteBot.RGBLights.ALL, 0xff0000)
+        pathOne()
+    }
+    else if (skibidi == 2) {
+        cuteBot.colorLight(cuteBot.RGBLights.ALL, 0xff8000)
+        pathTwo()
+    }
+    else if (skibidi == 3) {
+        cuteBot.colorLight(cuteBot.RGBLights.ALL, 0xffff00)
+        pathThree()
+    }
+    else if (skibidi == 4) {
+        cuteBot.colorLight(cuteBot.RGBLights.ALL, 0x00ff00)
+        pathFour()
+    }
+    else if (skibidi == 5) {
+        cuteBot.colorLight(cuteBot.RGBLights.ALL, 0x007fff)
+        pathFive()
+    }
+    else if (skibidi == 6) {
+        cuteBot.colorLight(cuteBot.RGBLights.ALL, 0xff00ff)
+        pathSix()
+    }
+}
+
+function wassup() {
+    if (skibidi < 6) {
+        skibidi += 1
+    }
+    else {
+        skibidi = 1
+    }
+    basic.showNumber(skibidi)
+    lingonhoolio()
 }
