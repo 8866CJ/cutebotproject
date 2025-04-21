@@ -13,7 +13,7 @@ input.onButtonPressed(Button.A, function () {
 })
 
 input.onButtonPressed(Button.B, function () {
-    turn_right(1)
+    _90left(1)
 })
 
 input.onButtonPressed(Button.AB, function () {
@@ -29,14 +29,14 @@ function forwards(times: number) {
     basic.pause(100)
     led.plotBarGraph(
         input.acceleration(Dimension.X),
-        4000
+        1023
     )
     cuteBot.motors(51.6, 51.95)
     basic.pause(800 * times)
     cuteBot.stopcar()
     led.plotBarGraph(
         input.acceleration(Dimension.X),
-        4000
+        1023
     )
     basic.pause(100)
 }
@@ -46,15 +46,15 @@ function turn_right(multiplier: number) {
     basic.pause(100)
     led.plotBarGraph(
         input.acceleration(Dimension.X),
-        4000
+        1023
     )
     basic.pause(100)
-    cuteBot.moveTime(cuteBot.Direction.right, 56, 0.145 * multiplier)
+    cuteBot.moveTime(cuteBot.Direction.right, 100, 0.116 * multiplier)
     cuteBot.stopcar()
     basic.pause(100)
     led.plotBarGraph(
         input.acceleration(Dimension.X),
-        4000
+        1023
     )
     basic.pause(100)
 }
@@ -64,15 +64,15 @@ function _90left(mmultiplier: number) {
     basic.pause(100)
     led.plotBarGraph(
         input.acceleration(Dimension.X),
-        4000
+        1023
     )
     basic.pause(100)
-    cuteBot.moveTime(cuteBot.Direction.left, 62.9, 0.135 * mmultiplier)
+    cuteBot.moveTime(cuteBot.Direction.left, 100, 0.117 * mmultiplier)
     cuteBot.stopcar()
     basic.pause(100)
     led.plotBarGraph(
         input.acceleration(Dimension.X),
-        4000
+        1023
     )
     basic.pause(100)
 }
@@ -213,42 +213,36 @@ function pathSix() {
 
 function servoStartUp() {
     cuteBot.setServo(cuteBot.ServoList.S1, 0)
-    cuteBot.setServo(cuteBot.ServoList.S2, 45)
+    cuteBot.setServo(cuteBot.ServoList.S2, 60)
 }
 
 function pickUp() {
     cuteBot.setServo(cuteBot.ServoList.S1, 120)
     basic.pause(2000)
     cuteBot.setServo(cuteBot.ServoList.S1, 100)
-    basic.pause(200)
+    basic.pause(50)
     cuteBot.setServo(cuteBot.ServoList.S1, 90)
-    basic.pause(200)
+    basic.pause(50)
     cuteBot.setServo(cuteBot.ServoList.S1, 80)
-    basic.pause(200)
+    basic.pause(50)
     cuteBot.setServo(cuteBot.ServoList.S1, 70)
-    basic.pause(200)
+    basic.pause(50)
     cuteBot.setServo(cuteBot.ServoList.S1, 60)
-    basic.pause(200)
+    basic.pause(50)
     cuteBot.setServo(cuteBot.ServoList.S1, 50)
-    basic.pause(200)
+    basic.pause(50)
     cuteBot.setServo(cuteBot.ServoList.S1, 40)
-    basic.pause(200)
+    basic.pause(50)
     cuteBot.setServo(cuteBot.ServoList.S1, 30)
     basic.pause(200)
-    basic.pause(200)
-    cuteBot.setServo(cuteBot.ServoList.S1, 50)
-    basic.pause(200)
-    cuteBot.setServo(cuteBot.ServoList.S1, 40)
-    basic.pause(200)
-    cuteBot.setServo(cuteBot.ServoList.S1, 30)
-    basic.pause(200)
+
 }
 
 function wiggle() {
     for (let index = 0; index < 4; index++) {
         cuteBot.setServo(cuteBot.ServoList.S2, 0)
         basic.pause(200)
-        cuteBot.setServo(cuteBot.ServoList.S2, 45)
+        cuteBot.setServo(cuteBot.ServoList.S2, 60)
         basic.pause(200)
     }
 }
