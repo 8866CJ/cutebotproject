@@ -159,6 +159,7 @@ function pathOne() {
     Cardi_ER()
     basic.pause(300)
     wiggle()
+    ServoToggle()
 }
 
 function pathTwo() {
@@ -169,6 +170,7 @@ function pathTwo() {
     cardi_room1()
     basic.pause(300)
     wiggle()
+    ServoToggle()
 }
 
 function pathThree() {
@@ -179,6 +181,7 @@ function pathThree() {
     respiratory_to_ER()
     basic.pause(300)
     wiggle()
+    ServoToggle()
 }
 
 function pathFour() {
@@ -189,6 +192,7 @@ function pathFour() {
     respiratory_to_room1()
     basic.pause(300)
     wiggle()
+    ServoToggle()
 }
 
 function pathFive() {
@@ -199,6 +203,7 @@ function pathFive() {
     pharmacy_to_ER()
     basic.pause(300)
     wiggle()
+    ServoToggle()
 }
 
 function pathSix() {
@@ -209,6 +214,7 @@ function pathSix() {
     pharmacy_to_room1()
     basic.pause(300)
     wiggle()
+    ServoToggle()
 }
 
 function servoStartUp() {
